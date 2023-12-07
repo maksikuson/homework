@@ -63,3 +63,12 @@ if 1 <= day_number <= 7:
 else:
      print("Invalid input. Please enter a day number from 1 to 7.")
      
+#Task 2
+
+month_number = int(input("Enter month number (1-12)"))
+month_name = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+if 1 <= month_number <= 12:
+    print(f"Month with number {month_number}: {month_name[month_number - 1]}") #а вже тут робив підглянучи на верх
+else:
+    print("Invalid input. Please enter a month number from 1 to 12.")
+     
