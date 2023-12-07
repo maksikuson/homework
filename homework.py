@@ -51,3 +51,15 @@ elif choose == 'yards':
     print(f"{meters} meters is {result} yard")
 else:
     print("Incorrect unit selection. Please enter 'miles', 'inches' or 'yards'.")
+    
+#Part 2
+
+#Task 1
+
+day_number = int(input("Enter the number of the day of the week (1-7): "))
+days_of_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+if 1 <= day_number <= 7:
+    print(f"Day of the week with the number {day_number}: {days_of_week[day_number - 1]}") #підглянув в ChatGPT
+else:
+     print("Invalid input. Please enter a day number from 1 to 7.")
+     
