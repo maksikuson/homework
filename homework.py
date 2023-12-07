@@ -71,4 +71,17 @@ if 1 <= month_number <= 12:
     print(f"Month with number {month_number}: {month_name[month_number - 1]}") #а вже тут робив підглянучи на верх
 else:
     print("Invalid input. Please enter a month number from 1 to 12.")
+    
+#Task 3
+
+number = float(input("Enter the number: "))
+
+if number <0:
+    print("Number is positive")
+if number >0:
+    print("Number is negative")
+if number == 0:
+    print("Number is equal to zero")
+    
+    
      
