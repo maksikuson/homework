@@ -32,3 +32,22 @@ elif choose == 'averege':
     print(f"Averege of three numbers: {result}")
 else:
     print("Invalid operation selection. Please enter 'maximum', 'minimum' or 'average'.")
+    
+#Task 3
+
+meters = float(input("Enter number of meters"))
+chooce = input("Select units of measurement (enter 'miles', 'inches' or 'yards'): ")
+meter_to_mile = 1609.344
+meter_to_inch = 0.0254
+meter_to_yard = 0.9144
+if chooce == 'miles':
+    result = meters * meter_to_mile
+    print(f"{meters} meters is {result} miles")
+elif choose == 'inches':
+    result = meters * meter_to_inch
+    print(f"{meters} meters is {result} inches")
+elif choose == 'yards':
+    result = meters * meter_to_yard
+    print(f"{meters} meters is {result} yard")
+else:
+    print("Incorrect unit selection. Please enter 'miles', 'inches' or 'yards'.")
