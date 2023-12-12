@@ -2,10 +2,6 @@
 
 #Task 1
 
-#Part 1
-
-#Task 1
-
 num1 = int(input("Enter start of range : "))
 num2 = int(input("Enter end of range : "))
 for number in range(num1, num2 + 1):
