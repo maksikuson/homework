@@ -15,19 +15,22 @@ else:
 
 #Task 2
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+def change_case_reserved_words(text, reserved_words):              #Робив з допомогою ChatGPT
+    words = text.split() 
+    result_words = []
+    for word in words:
+        if word.lower() in map(str.lower, reserved_words):
+            result_words.append(word.upper())
+        else:
+            result_words.append(word)
+    result_text = ''.join(result_words)
+    return result_text
+text = input("Enter text: ")
+reserved_words_input = input("Enter a list of reserved words separated by commas:")          
+reserved_words = [word.strip() for word in reserved_words_input.split(',')]
+result_text = change_case_reserved_words(text, reserved_words)
+print("Changed text:")
+print(result_text)
 
 #Task 3
 
