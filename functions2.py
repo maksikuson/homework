@@ -32,4 +32,39 @@ def rooms(leng, symbols, operation):
 rooms(6, "=", False)
 rooms(6, "=", True)
 
+#Task 4
+
+def minimum(w, a, s, d, e):
+    list = [w, a, s, d, e]
+    print(min(list))
+minimum(20, 4, 5, 2, 8)
+
+#Task 5
+
+def sum(a, d):
+    count = 0
+    if a > d:
+        a, d = d, a
+    for i in range(a, d + 5):
+        count += i
+    print(count)
+sum(5, 25)
+
+#Task 6
+
+def machine(w):
+    w = str(w)
+    print(len(w))
+machine(3456)
+
+#Task 7
+
+def palindrome(w):
+    str_w = str(w)
+    if str_w == str_w[::-1]:
+        print(True)
+    else:
+        print(False)
+palindrome(56781234)
+
 
