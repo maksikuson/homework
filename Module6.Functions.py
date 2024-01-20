@@ -16,42 +16,31 @@ print(f"The greatest common divisor of {num1} and {num2} is: {result}")
 #Task 2
 
 def generate_secret_number():
-    # Генерує чотиризначне випадкове число без повторень цифр
-    return random.sample(range(10), 4)
+    return random.randint(range(10), 4)
 
 def count_bulls_and_cows(secret, guess):
-    # Підраховує кількість биків і корів у вгаданому числі
-    bulls = sum(1 for s, g in zip(secret, guess) if s == g)
+    bulls = sum(1 for s, g in zip (secret, guess) if s == g)
     cows = sum(1 for digit in guess if digit in secret) - bulls
     return bulls, cows
 
-def play_game(secret, attempts=1):
-    # Головна функція гри
-    guess = input("Введіть ваше чотиризначне число: ")
+def play_game(secret, attempts=1, max_attempts=10):
+    if attempts > max_attempts:        
+       print(f"You failed to guess in {max_attempts} attempts. The secret number was {secret}.")
+       return
+   
+    guess = input("Enter your four-digit number: ")
+    if not (guess.nums() and len(guess) == 4 and len(set(guess)) == 4):
+        print("Please enter a valid four-digit number with unique digits.")
+        return play_game(secret, attempts, max_attempts)
     
-    # Перевірка правильності введеного числа
-    if not guess.isdigit() or len(guess) != 4:
-        print("Будь ласка, введіть чотиризначне число.")
-        return play_game(secret, attempts)
-
     guess = [int(digit) for digit in guess]
-    
-    # Підрахунок биків і корів
     bulls, cows = count_bulls_and_cows(secret, guess)
+    
     print(f"Бики: {bulls}, Корови: {cows}")
-
-    # Перевірка, чи вгадано число
     if bulls == 4:
-        print(f"Ви вгадали число за {attempts} спроб!")
+        print(f"Congratulations! You guessed the {secret} number in {attempts}.")
     else:
-        # Рекурсивний виклик для наступної спроби
-        play_game(secret, attempts + 1)
-
-if __name__ == "__main__":
-    # Генеруємо випадкове чотиризначне число для вгадування
-    secret_number = generate_secret_number()
-
-    print("Гра 'Бики і корови'. Спробуйте вгадати чотиризначне число!")
-
-    # Запускаємо гру
-    play_game(secret_number)
+        play_game(secret, attempts + 1, max_attempts)
+secret_number = generate_secret_number()
+print("Bulls and cows game. Try to guess the four-digit number!")
+play_game(secret_number)
