@@ -60,3 +60,37 @@ for i in range(3):
     else:
         print(f"Running total: {sum(list1)}")
 print(f"Final list: {list1}")
+
+#Task 4
+
+def calculate_sum(numbers):
+    return sum(numbers)
+
+def main():
+    try:
+        user_input = [int(input("Enter a number: ")) for _ in range(3)]
+        result = calculate_sum(user_input)
+        print(f"Sum of numbers: {result}")
+    except ValueError as e:
+        print(f"ERROR: {e}")
+        
+if __name__ == "__main__":
+    main()
+
+   
+def calculate_sum(numbers):
+    try:
+        return sum(numbers)
+    except TypeError:
+        raise ValueError("Invalid input. Please enter valid numbers. ")
+
+def main():
+    try:
+        user_input = [int(input("Enter a number: ")) for _ in range(3)]
+        result = calculate_sum(user_input)
+        print(f"Sum of numbers: {result}")
+    except ValueError as e:
+        print(f"ERROR: {e}")
+        
+if __name__ == "__main__":
+    main()
