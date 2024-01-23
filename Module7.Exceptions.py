@@ -44,4 +44,19 @@ try:
     print(result)
 except ValueError as e:
     print(f'ERROR: {e}')
-    
+
+#Task 3
+
+list1 = []
+
+for i in range(3):
+    try:
+        number = int(input("Enter a positive number: "))
+        if number < 0:
+            raise ValueError("Please enter a positive number.")
+        list1.append(number)
+    except ValueError as e:
+        print(f"ERROR: {e}")
+    else:
+        print(f"Running total: {sum(list1)}")
+print(f"Final list: {list1}")
