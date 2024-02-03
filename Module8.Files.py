@@ -76,3 +76,13 @@ if lines:
 else:
     print("The file is empty or missing.")
     
+#Task 5
+
+wordUser = input("Enter word: ")
+
+with open('file1.txt', 'r', encoding='utf-8') as file1:
+    numberOfFiles = input("Enter word to delite: ")
+    
+count = numberOfFiles.lower().split().count(wordUser.lower())
+
+print(f"Word {wordUser} occurs in the file {count} times")
