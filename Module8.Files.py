@@ -44,3 +44,20 @@ print(f"Number of lines: {lines}")
 print(f"Number of vowels: {vomelsCount}")
 print(f"Number of consonant letters: {consonantCount}")
 print(f"Number of digits: {digits}")
+
+#Task 3
+
+input_file_path = "file1.txt"
+output_file_path = "file2.txt"
+
+with open(input_file_path, 'r', encoding='utf-8') as input_file:
+    lines = input_file.readlines()
+    
+if lines:
+    lines.pop()
+    with open(output_file_path, 'w', encoding='utf-8') as output_file:
+        output_file.writelines(lines)
+else:
+    print("The file is empty or missing.")
+    
+print(f"The last line was deleted and the result was written to the file: {output_file_path}")
