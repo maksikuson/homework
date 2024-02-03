@@ -61,3 +61,18 @@ else:
     print("The file is empty or missing.")
     
 print(f"The last line was deleted and the result was written to the file: {output_file_path}")
+
+#Task 4
+
+input_file_path = "file1.txt"
+
+with open(input_file_path, 'r', encoding='utf-8') as input_file:
+    lines = input_file.readlines()
+    
+if lines:
+    max_length = max(len(line) for line in lines[:2])   
+     
+    print(f"The length of the longest line among the first two: {max_length}")
+else:
+    print("The file is empty or missing.")
+    
