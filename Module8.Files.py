@@ -81,8 +81,20 @@ else:
 wordUser = input("Enter word: ")
 
 with open('file1.txt', 'r', encoding='utf-8') as file1:
-    numberOfFiles = input("Enter word to delite: ")
+    numberOfFiles = file1.read()
     
 count = numberOfFiles.lower().split().count(wordUser.lower())
 
 print(f"Word {wordUser} occurs in the file {count} times")
+
+#Task 6
+
+with open('file1.txt', 'r', encoding='utf-8') as file1:
+    numberOfFiles = file1.read()
+
+wordDelite = input("Enter word to delite: ")
+wordNew = input("Enter new word: ")
+updateFile = numberOfFiles.replace(wordDelite,wordNew)
+
+with open('file1.txt', 'r', encoding='utf-8') as file1:
+    file.write(updateFile)
